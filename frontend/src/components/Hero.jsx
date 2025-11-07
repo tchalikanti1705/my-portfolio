@@ -31,17 +31,17 @@ const Hero = () => {
 
         <div className="flex items-center justify-center gap-4 mb-8">
           <a href={personal.github} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400">
+            <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
               <Github size={20} />
             </Button>
           </a>
           <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400">
+            <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
               <Linkedin size={20} />
             </Button>
           </a>
           <a href={`mailto:${personal.email}`}>
-            <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400">
+            <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
               <Mail size={20} />
             </Button>
           </a>
