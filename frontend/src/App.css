@@ -23,3 +23,13 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #52525b;
 }
+
+/* Hide Emergent watermark */
+div[style*="position: fixed"][style*="bottom: 20px"][style*="right: 20px"] {
+    display: none !important;
+}
+
+button[style*="background: white"],
+a[href*="emergent"] {
+    display: none !important;
+}
