@@ -46,7 +46,7 @@ const Projects = () => {
               <div className="flex gap-3">
                 {project.github && (
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <Button variant="outline" className="w-full border-zinc-700 hover:border-cyan-400 hover:text-cyan-400">
+                    <Button variant="outline" className="w-full border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
                       <Github size={18} className="mr-2" />
                       Code
                     </Button>
@@ -54,7 +54,7 @@ const Projects = () => {
                 )}
                 {project.demo && (
                   <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <Button className="w-full bg-cyan-500 hover:bg-cyan-600">
+                    <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white">
                       <ExternalLink size={18} className="mr-2" />
                       Demo
                     </Button>
