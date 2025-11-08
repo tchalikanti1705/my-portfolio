@@ -61,7 +61,7 @@ const Hero = () => {
               const element = document.querySelector('#about');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400"
+            className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300"
           >
             Learn More
           </Button>
