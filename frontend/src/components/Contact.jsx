@@ -111,9 +111,9 @@ const Contact = () => {
                   className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group"
                 >
                   <div className="p-2 bg-zinc-900 rounded-lg group-hover:bg-cyan-500/10 transition-colors">
-                    <Mail size={20} />
+                    <Mail size={20} className="text-gray-300 group-hover:text-cyan-400" />
                   </div>
-                  <span>{personal.email}</span>
+                  <span className="text-gray-300 group-hover:text-cyan-400">{personal.email}</span>
                 </a>
                 <a 
                   href={personal.linkedin}
@@ -122,9 +122,9 @@ const Contact = () => {
                   className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group"
                 >
                   <div className="p-2 bg-zinc-900 rounded-lg group-hover:bg-cyan-500/10 transition-colors">
-                    <Linkedin size={20} />
+                    <Linkedin size={20} className="text-gray-300 group-hover:text-cyan-400" />
                   </div>
-                  <span>LinkedIn Profile</span>
+                  <span className="text-gray-300 group-hover:text-cyan-400">LinkedIn Profile</span>
                 </a>
                 <a 
                   href={personal.github}
@@ -133,9 +133,9 @@ const Contact = () => {
                   className="flex items-center gap-3 text-gray-300 hover:text-cyan-400 transition-colors group"
                 >
                   <div className="p-2 bg-zinc-900 rounded-lg group-hover:bg-cyan-500/10 transition-colors">
-                    <Github size={20} />
+                    <Github size={20} className="text-gray-300 group-hover:text-cyan-400" />
                   </div>
-                  <span>GitHub Profile</span>
+                  <span className="text-gray-300 group-hover:text-cyan-400">GitHub Profile</span>
                 </a>
               </div>
             </div>
