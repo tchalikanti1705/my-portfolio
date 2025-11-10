@@ -9,7 +9,6 @@ const Hero = () => {
   const [showTitle, setShowTitle] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
-  const [showAIPrompt, setShowAIPrompt] = useState(false);
 
   useEffect(() => {
     let nameIndex = 0;
