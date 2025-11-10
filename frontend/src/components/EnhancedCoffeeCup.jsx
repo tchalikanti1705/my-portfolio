@@ -8,9 +8,33 @@ const EnhancedCoffeeCup = () => {
   const [coffeeLevel, setCoffeeLevel] = useState(0);
   const [coffeeCount, setCoffeeCount] = useState(127); // Starting count
   const [showThankYou, setShowThankYou] = useState(false);
+  const [hasUserBought, setHasUserBought] = useState(false);
+
+  // Check if user already bought coffee on mount
+  useEffect(() => {
+    const userBought = localStorage.getItem('coffee_bought');
+    const storedCount = localStorage.getItem('coffee_count');
+    
+    if (userBought === 'true') {
+      setHasUserBought(true);
+    }
+    
+    if (storedCount) {
+      setCoffeeCount(parseInt(storedCount));
+    }
+  }, []);
 
   const handleCoffeeClick = () => {
     if (isPouring) return;
+    
+    // Check if user already bought
+    if (hasUserBought) {
+      toast({
+        title: "☕ You already bought me a coffee!",
+        description: "Thanks for your support! One coffee per person is enough. 😊",
+      });
+      return;
+    }
     
     setIsPouring(true);
     setCoffeeLevel(0);
@@ -23,13 +47,19 @@ const EnhancedCoffeeCup = () => {
       setCoffeeLevel(level);
       if (level >= 85) {
         clearInterval(interval);
-        // Increment counter
-        setCoffeeCount(prev => prev + 1);
+        
+        // Increment counter and save to localStorage
+        const newCount = coffeeCount + 1;
+        setCoffeeCount(newCount);
+        localStorage.setItem('coffee_count', newCount.toString());
+        localStorage.setItem('coffee_bought', 'true');
+        setHasUserBought(true);
+        
         setShowThankYou(true);
         
         toast({
           title: "☕ Thank you for the coffee!",
-          description: "Your support means a lot! Keep exploring.",
+          description: "Your support means a lot! Keep exploring my portfolio.",
         });
         
         setTimeout(() => {
