@@ -219,8 +219,8 @@ const EnhancedAIChat = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
-          <div className="p-4 border-t border-zinc-700 bg-zinc-900 flex gap-2">
+          {/* Input - Fixed at bottom */}
+          <div className="p-4 border-t border-zinc-700 bg-zinc-900 flex gap-2 shrink-0">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -228,7 +228,7 @@ const EnhancedAIChat = () => {
               placeholder="Ask about Teja's experience..."
               className="bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-500 focus:border-cyan-500"
             />
-            <Button onClick={handleSend} className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600">
+            <Button onClick={handleSend} className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 shrink-0">
               <Send size={20} />
             </Button>
           </div>
