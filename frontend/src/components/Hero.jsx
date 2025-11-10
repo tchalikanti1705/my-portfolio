@@ -1,1 +1,154 @@
-import React, { useState, useEffect } from 'react';\nimport { ArrowDown, Github, Linkedin, Mail, Bot } from 'lucide-react';\nimport { Button } from './ui/button';\nimport { portfolioData } from '../data/mockData';\n\nconst Hero = () => {\n  const { personal } = portfolioData;\n  const [displayedName, setDisplayedName] = useState('');\n  const [showTitle, setShowTitle] = useState(false);\n  const [showTagline, setShowTagline] = useState(false);\n  const [showWelcome, setShowWelcome] = useState(false);\n  const [showAIPrompt, setShowAIPrompt] = useState(false);\n\n  useEffect(() => {\n    // Typewriter effect for name\n    let nameIndex = 0;\n    const nameInterval = setInterval(() => {\n      if (nameIndex < personal.name.length) {\n        setDisplayedName(personal.name.slice(0, nameIndex + 1));\n        nameIndex++;\n      } else {\n        clearInterval(nameInterval);\n        setTimeout(() => setShowTitle(true), 300);\n      }\n    }, 100);\n\n    return () => clearInterval(nameInterval);\n  }, []);\n\n  useEffect(() => {\n    if (showTitle) {\n      setTimeout(() => setShowTagline(true), 800);\n    }\n  }, [showTitle]);\n\n  useEffect(() => {\n    if (showTagline) {\n      setTimeout(() => setShowWelcome(true), 800);\n    }\n  }, [showTagline]);\n\n  useEffect(() => {\n    if (showWelcome) {\n      setTimeout(() => setShowAIPrompt(true), 1000);\n    }\n  }, [showWelcome]);\n\n  const scrollToContact = (e) => {\n    e.preventDefault();\n    const element = document.querySelector('#contact');\n    if (element) {\n      element.scrollIntoView({ behavior: 'smooth' });\n    }\n  };\n\n  return (\n    <section className=\"min-h-screen flex items-center justify-center px-6 pt-16 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950\">\n      <div className=\"max-w-4xl mx-auto text-center\">\n        <div className=\"mb-6\">\n          <h1 className=\"text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight min-h-[4rem] md:min-h-[5rem]\">\n            {displayedName}\n            {displayedName.length < personal.name.length && (\n              <span className=\"animate-pulse\">|</span>\n            )}\n          </h1>\n          \n          {showTitle && (\n            <h2 className=\"text-2xl md:text-3xl text-cyan-400 font-semibold mb-4 animate-in fade-in slide-in-from-top-4 duration-700\">\n              {personal.title}\n            </h2>\n          )}\n          \n          {showTagline && (\n            <p className=\"text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-in fade-in slide-in-from-top-4 duration-700\">\n              {personal.tagline}\n            </p>\n          )}\n\n          {showWelcome && (\n            <div className=\"mt-6 animate-in fade-in slide-in-from-top-4 duration-700\">\n              <p className=\"text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 font-bold mb-2\">\n                Welcome to My Virtual World\n              </p>\n              <p className=\"text-gray-400 text-base max-w-xl mx-auto\">\n                Full-stack developer passionate about building intelligent, scalable solutions that make a difference.\n              </p>\n            </div>\n          )}\n\n          {showAIPrompt && (\n            <div className=\"mt-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg p-4 max-w-md mx-auto animate-in fade-in scale-in-95 duration-700\">\n              <div className=\"flex items-center justify-center gap-2 mb-2\">\n                <Bot size={24} className=\"text-cyan-400 animate-pulse\" />\n                <p className=\"text-white font-bold text-lg\">Want to know more about me?</p>\n              </div>\n              <p className=\"text-gray-400 text-sm\">\n                Click the AI assistant button below to ask anything!\n              </p>\n            </div>\n          )}\n        </div>\n\n        {showTitle && (\n          <div className=\"flex items-center justify-center gap-4 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700\">\n            <a href={personal.github} target=\"_blank\" rel=\"noopener noreferrer\">\n              <Button variant=\"outline\" size=\"icon\" className=\"border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300\">\n                <Github size={20} />\n              </Button>\n            </a>\n            <a href={personal.linkedin} target=\"_blank\" rel=\"noopener noreferrer\">\n              <Button variant=\"outline\" size=\"icon\" className=\"border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300\">\n                <Linkedin size={20} />\n              </Button>\n            </a>\n            <a href={`mailto:${personal.email}`}>\n              <Button variant=\"outline\" size=\"icon\" className=\"border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300\">\n                <Mail size={20} />\n              </Button>\n            </a>\n          </div>\n        )}\n\n        {showTagline && (\n          <div className=\"flex items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700\">\n            <Button \n              onClick={scrollToContact}\n              className=\"bg-cyan-500 hover:bg-cyan-600 text-white px-8\"\n            >\n              Get In Touch\n            </Button>\n            <Button \n              variant=\"outline\" \n              onClick={(e) => {\n                e.preventDefault();\n                const element = document.querySelector('#about');\n                if (element) element.scrollIntoView({ behavior: 'smooth' });\n              }}\n              className=\"border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300\"\n            >\n              Learn More\n            </Button>\n          </div>\n        )}\n\n        {showWelcome && (\n          <div className=\"mt-16 animate-bounce\">\n            <ArrowDown size={24} className=\"mx-auto text-gray-600\" />\n          </div>\n        )}\n      </div>\n    </section>\n  );\n};\n\nexport default Hero;
+import React, { useState, useEffect } from 'react';
+import { ArrowDown, Github, Linkedin, Mail, Bot } from 'lucide-react';
+import { Button } from './ui/button';
+import { portfolioData } from '../data/mockData';
+
+const Hero = () => {
+  const { personal } = portfolioData;
+  const [displayedName, setDisplayedName] = useState('');
+  const [showTitle, setShowTitle] = useState(false);
+  const [showTagline, setShowTagline] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [showAIPrompt, setShowAIPrompt] = useState(false);
+
+  useEffect(() => {
+    let nameIndex = 0;
+    const nameInterval = setInterval(() => {
+      if (nameIndex < personal.name.length) {
+        setDisplayedName(personal.name.slice(0, nameIndex + 1));
+        nameIndex++;
+      } else {
+        clearInterval(nameInterval);
+        setTimeout(() => setShowTitle(true), 300);
+      }
+    }, 100);
+
+    return () => clearInterval(nameInterval);
+  }, [personal.name]);
+
+  useEffect(() => {
+    if (showTitle) {
+      setTimeout(() => setShowTagline(true), 800);
+    }
+  }, [showTitle]);
+
+  useEffect(() => {
+    if (showTagline) {
+      setTimeout(() => setShowWelcome(true), 800);
+    }
+  }, [showTagline]);
+
+  useEffect(() => {
+    if (showWelcome) {
+      setTimeout(() => setShowAIPrompt(true), 1000);
+    }
+  }, [showWelcome]);
+
+  const scrollToContact = (e) => {
+    e.preventDefault();
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section className="min-h-screen flex items-center justify-center px-6 pt-16 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight min-h-[4rem] md:min-h-[5rem]">
+            {displayedName}
+            {displayedName.length < personal.name.length && (
+              <span className="animate-pulse">|</span>
+            )}
+          </h1>
+          
+          {showTitle && (
+            <h2 className="text-2xl md:text-3xl text-cyan-400 font-semibold mb-4 animate-in fade-in slide-in-from-top-4 duration-700">
+              {personal.title}
+            </h2>
+          )}
+          
+          {showTagline && (
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-in fade-in slide-in-from-top-4 duration-700">
+              {personal.tagline}
+            </p>
+          )}
+
+          {showWelcome && (
+            <div className="mt-6 animate-in fade-in slide-in-from-top-4 duration-700">
+              <p className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 font-bold mb-2">
+                Welcome to My Virtual World
+              </p>
+              <p className="text-gray-400 text-base max-w-xl mx-auto">
+                Full-stack developer passionate about building intelligent, scalable solutions that make a difference.
+              </p>
+            </div>
+          )}
+
+          {showAIPrompt && (
+            <div className="mt-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg p-4 max-w-md mx-auto animate-in fade-in scale-in-95 duration-700">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <Bot size={24} className="text-cyan-400 animate-pulse" />
+                <p className="text-white font-bold text-lg">Want to know more about me?</p>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Click the AI assistant button below to ask anything!
+              </p>
+            </div>
+          )}
+        </div>
+
+        {showTitle && (
+          <div className="flex items-center justify-center gap-4 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <a href={personal.github} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
+                <Github size={20} />
+              </Button>
+            </a>
+            <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
+                <Linkedin size={20} />
+              </Button>
+            </a>
+            <a href={`mailto:${personal.email}`}>
+              <Button variant="outline" size="icon" className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300">
+                <Mail size={20} />
+              </Button>
+            </a>
+          </div>
+        )}
+
+        {showTagline && (
+          <div className="flex items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <Button 
+              onClick={scrollToContact}
+              className="bg-cyan-500 hover:bg-cyan-600 text-white px-8"
+            >
+              Get In Touch
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector('#about');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 text-gray-300"
+            >
+              Learn More
+            </Button>
+          </div>
+        )}
+
+        {showWelcome && (
+          <div className="mt-16 animate-bounce">
+            <ArrowDown size={24} className="mx-auto text-gray-600" />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
