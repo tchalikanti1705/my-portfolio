@@ -33,3 +33,18 @@ a[href*="emergent.sh"] {
     opacity: 0 !important;
     pointer-events: none !important;
 }
+
+/* Coffee pouring animation */
+@keyframes pourCoffee {
+    0% {
+        height: 0px;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        height: 50px;
+        opacity: 0.9;
+    }
+}
