@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import { portfolioData } from '../data/mockData';
-import CoffeeCup from './CoffeeCup';
+import EnhancedCoffeeCup from './EnhancedCoffeeCup';
 
 const Contact = () => {
   const { personal } = portfolioData;
@@ -56,7 +56,7 @@ const Contact = () => {
           </div>
 
           {/* Buy Me a Coffee */}
-          <CoffeeCup />
+          <EnhancedCoffeeCup />
         </div>
       </div>
     </section>
