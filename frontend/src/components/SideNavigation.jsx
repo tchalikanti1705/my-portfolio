@@ -15,7 +15,7 @@ const SideNavigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
