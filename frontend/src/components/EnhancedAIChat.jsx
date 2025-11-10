@@ -24,6 +24,19 @@ const EnhancedAIChat = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Prevent body scroll when chat is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const getDetailedResponse = (query) => {
     const lowerQuery = query.toLowerCase();
 
