@@ -9,7 +9,6 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import EnhancedAIChat from './components/EnhancedAIChat';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
       <Education />
       <Contact />
       <Footer />
-      <EnhancedAIChat />
       <Toaster />
     </div>
   );
