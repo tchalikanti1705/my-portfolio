@@ -13,7 +13,7 @@ import { Toaster } from './components/ui/toaster';
 
 function App() {
   return (
-    <div className="App bg-zinc-950">
+    <div className="App bg-zinc-950 pb-20 lg:pb-0">
       <SideNavigation />
       <Hero />
       <About />
