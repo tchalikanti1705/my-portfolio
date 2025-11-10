@@ -37,12 +37,6 @@ const Hero = () => {
     }
   }, [showTagline]);
 
-  useEffect(() => {
-    if (showWelcome) {
-      setTimeout(() => setShowAIPrompt(true), 1000);
-    }
-  }, [showWelcome]);
-
   const scrollToContact = (e) => {
     e.preventDefault();
     const element = document.querySelector('#contact');
