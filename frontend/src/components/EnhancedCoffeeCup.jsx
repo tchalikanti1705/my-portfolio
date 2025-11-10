@@ -160,14 +160,20 @@ const EnhancedCoffeeCup = () => {
 
       <Button 
         onClick={handleCoffeeClick}
-        className="w-full bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 hover:from-amber-700 hover:via-amber-800 hover:to-amber-900 text-white font-bold text-lg py-6 shadow-lg hover:shadow-amber-500/50 transition-all duration-300"
+        className={`w-full font-bold text-lg py-6 shadow-lg transition-all duration-300 ${
+          hasUserBought 
+            ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 cursor-not-allowed' 
+            : 'bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 hover:from-amber-700 hover:via-amber-800 hover:to-amber-900 hover:shadow-amber-500/50'
+        } text-white`}
         disabled={isPouring}
       >
         <Coffee size={24} className="mr-2" />
-        {isPouring ? 'Pouring Coffee...' : 'Buy Me a Coffee'}
+        {isPouring ? 'Pouring Coffee...' : hasUserBought ? '✓ Coffee Bought!' : 'Buy Me a Coffee'}
       </Button>
       
-      <p className="text-gray-500 text-sm mt-4">Click to pour and support! ☕✨</p>
+      <p className="text-gray-500 text-sm mt-4">
+        {hasUserBought ? 'Thanks for your support! 💚' : 'Click to pour and support! ☕✨'}
+      </p>
     </div>
   );
 };
