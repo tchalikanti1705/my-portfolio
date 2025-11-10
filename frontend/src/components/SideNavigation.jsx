@@ -8,8 +8,8 @@ const SideNavigation = () => {
     { id: 'hero', label: 'Home', icon: Home, href: '#' },
     { id: 'about', label: 'About', icon: User, href: '#about' },
     { id: 'experience', label: 'Experience', icon: Briefcase, href: '#experience' },
-    { id: 'skills', label: 'Skills', icon: Code, href: '#skills' },
     { id: 'projects', label: 'Projects', icon: FolderGit2, href: '#projects' },
+    { id: 'skills', label: 'Skills', icon: Code, href: '#skills' },
     { id: 'contact', label: 'Contact', icon: Mail, href: '#contact' }
   ];
 
