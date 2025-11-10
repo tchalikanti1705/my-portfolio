@@ -171,6 +171,14 @@ const EnhancedAIChat = () => {
         </button>
       )}
 
+      {/* Backdrop overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-[9998]"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
       {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-[420px] h-[650px] bg-zinc-900 border border-cyan-500/30 rounded-lg shadow-2xl shadow-cyan-500/20 flex flex-col z-[9999]">
