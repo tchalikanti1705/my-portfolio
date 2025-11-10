@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, Bot } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 import { portfolioData } from '../data/mockData';
 
