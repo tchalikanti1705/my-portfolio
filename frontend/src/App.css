@@ -25,11 +25,16 @@
 }
 
 /* Hide Emergent watermark */
-div[style*="position: fixed"][style*="bottom: 20px"][style*="right: 20px"] {
+div[style*="position: fixed"][style*="bottom"][style*="right"] {
     display: none !important;
 }
 
-button[style*="background: white"],
-a[href*="emergent"] {
+button[class*="emergent"],
+a[href*="emergent.sh"] {
+    display: none !important;
+}
+
+/* Hide any fixed positioned elements at bottom right corner except AI chat */
+body > div:not([id]):not([class^="App"]) {
     display: none !important;
 }
