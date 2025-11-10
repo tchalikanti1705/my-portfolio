@@ -78,18 +78,6 @@ const Hero = () => {
               </p>
             </div>
           )}
-
-          {showAIPrompt && (
-            <div className="mt-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-lg p-4 max-w-md mx-auto animate-in fade-in scale-in-95 duration-700">
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <Bot size={24} className="text-cyan-400 animate-pulse" />
-                <p className="text-white font-bold text-lg">Want to know more about me?</p>
-              </div>
-              <p className="text-gray-400 text-sm">
-                Click the AI assistant button below to ask anything!
-              </p>
-            </div>
-          )}
         </div>
 
         {showTitle && (
