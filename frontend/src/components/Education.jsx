@@ -15,7 +15,7 @@ const Education = () => {
           {education.map((edu) => (
             <div 
               key={edu.id}
-              className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-cyan-500/50 transition-all duration-300"
+              className="bg-zinc-950 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-cyan-500/50 transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row md:justify-between md:items-start">
                 <div className="flex-grow">
