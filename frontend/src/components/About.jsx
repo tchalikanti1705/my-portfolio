@@ -5,7 +5,7 @@ const About = () => {
   const { personal } = portfolioData;
 
   return (
-    <section id="about" className="py-20 px-6 bg-zinc-950">
+    <section id="about" className="py-20 px-6 lg:pl-32 bg-zinc-950">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
           About Me
