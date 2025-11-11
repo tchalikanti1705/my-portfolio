@@ -53,6 +53,18 @@ const Contact = () => {
                 <span className="text-gray-300 group-hover:text-cyan-400">GitHub Profile</span>
               </a>
             </div>
+
+            {/* Warm Message */}
+            <div className="mt-6 pt-6 border-t border-zinc-800">
+              <p className="text-gray-300 leading-relaxed text-sm">
+                You made it all the way to the bottom—I really appreciate you taking the time to explore my journey. 
+                Whether you're a recruiter, fellow developer, or just someone curious about tech, I'd love to hear from you. 
+                Drop me a message and let's create something amazing together!
+              </p>
+              <p className="text-cyan-400 text-sm mt-3 font-semibold">
+                💡 Open to collaborating on exciting projects!
+              </p>
+            </div>
           </div>
 
           {/* Buy Me a Coffee */}
