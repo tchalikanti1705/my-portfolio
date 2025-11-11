@@ -50,7 +50,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
-          <div className="text-left lg:text-left">
+          <div className="text-left lg:text-left lg:pl-12">
             <div className="mb-6">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight min-h-[4rem] md:min-h-[5rem]">
                 {displayedName}
