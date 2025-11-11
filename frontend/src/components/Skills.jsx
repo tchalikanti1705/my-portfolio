@@ -18,7 +18,7 @@ const Skills = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
-    <section id="skills" className="py-20 px-6 bg-zinc-900">
+    <section id="skills" className="py-20 px-6 lg:pl-32 bg-zinc-900">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Technical Skills
