@@ -8,7 +8,7 @@ const Projects = () => {
   const { projects } = portfolioData;
 
   return (
-    <section id="projects" className="py-20 px-6 lg:pl-32 bg-zinc-950">
+    <section id="projects" className="py-20 px-6 lg:pl-32 bg-zinc-900">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Featured Projects
@@ -17,7 +17,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 hover:border-cyan-500/50 transition-all duration-300 flex flex-col"
+              className="bg-zinc-950 border border-zinc-800 rounded-lg p-6 hover:border-cyan-500/50 transition-all duration-300 flex flex-col"
             >
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
                 {project.title}
