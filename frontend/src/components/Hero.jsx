@@ -128,7 +128,7 @@ const Hero = () => {
 
           {/* Right Side - Photo with Frame */}
           {showTitle && (
-            <div className="flex items-center justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-700">
+            <div className="flex items-center justify-center lg:justify-end lg:pr-12 animate-in fade-in slide-in-from-right-8 duration-700">
               <div className="relative">
                 {/* Glowing background effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-2xl"></div>
