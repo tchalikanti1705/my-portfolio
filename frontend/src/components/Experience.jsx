@@ -1,5 +1,6 @@
 import React from 'react';
 import { Briefcase, MapPin } from 'lucide-react';
+import { Badge } from './ui/badge';
 import { portfolioData } from '../data/mockData';
 
 const Experience = () => {
