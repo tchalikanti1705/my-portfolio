@@ -17,6 +17,7 @@ export const portfolioData = {
       role: "Software Engineer Intern",
       location: "Miami, Florida",
       duration: "June 2025 – August 2025",
+      techStack: ["Python", "FastAPI", "Firebase", "LangChain", "OpenAI", "Firestore", "React", "Whisper", "Google Cloud"],
       highlights: [
         "Designed and implemented secure authentication system with Firebase supporting multiple social providers",
         "Developed core travel services including SOS detection, weather API, and calendar sync features",
@@ -30,6 +31,7 @@ export const portfolioData = {
       role: "Software Engineer",
       location: "Hyderabad, India",
       duration: "January 2024 – July 2024",
+      techStack: ["Python", "FastAPI", "PostgreSQL", "BigQuery", "S3", "Twilio", "React", "HIPAA Compliance"],
       highlights: [
         "Reduced support needs by implementing Client Portal with scheduling and secure S3-backed assessments",
         "Built AI session assistant logging Q&A to BigQuery with context preservation",
@@ -43,6 +45,7 @@ export const portfolioData = {
       role: "Software Engineer Specialist",
       location: "Hyderabad, India",
       duration: "November 2022 – November 2023",
+      techStack: ["AWS", "EC2", "EMR", "Lambda", "SQS", "S3", "Spark", "Python", "SQL"],
       highlights: [
         "Built ETL pipelines with EC2, EMR, Lambda, and SQS, reducing S3 costs by 30%",
         "Optimized Spark performance on EMR through AQE and data skew handling",
