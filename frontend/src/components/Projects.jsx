@@ -8,7 +8,7 @@ const Projects = () => {
   const { projects } = portfolioData;
 
   return (
-    <section id="projects" className="py-20 px-6 bg-zinc-950">
+    <section id="projects" className="py-20 px-6 lg:pl-32 bg-zinc-950">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Featured Projects
