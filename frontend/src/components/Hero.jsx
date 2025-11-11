@@ -46,7 +46,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-16 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950">
+    <section className="min-h-screen flex items-center justify-center px-6 lg:pl-32 pt-16 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
