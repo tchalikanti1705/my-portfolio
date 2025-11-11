@@ -6,7 +6,7 @@ const Education = () => {
   const { education } = portfolioData;
 
   return (
-    <section id="education" className="py-20 px-6 lg:pl-32 bg-zinc-950">
+    <section id="education" className="py-20 px-6 lg:pl-32 bg-zinc-900">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Education
