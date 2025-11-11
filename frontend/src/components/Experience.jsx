@@ -43,6 +43,20 @@ const Experience = () => {
                       {exp.duration}
                     </div>
                   </div>
+                  {/* Tech Stack */}
+                  {exp.techStack && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-gray-400 mb-2">Tech Stack:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.techStack.map((tech, idx) => (
+                          <Badge key={idx} variant="secondary" className="bg-zinc-800 text-cyan-400 border-zinc-700">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
                   <ul className="space-y-2 mt-4">
                     {exp.highlights.map((highlight, idx) => (
                       <li key={idx} className="text-gray-300 flex items-start">
